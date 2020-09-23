@@ -12,13 +12,18 @@ const Container = styled.div`
   border: 1px black solid;
 `;
 
-export default function BinaryToDecimalConverter() {
+export default function BinaryToDecimalConverter({
+  onChange,
+  onClick,
+  inputNumber,
+  convertedNumber,
+}) {
   return (
     <div>
       <h1>Binary to Decimal Converter</h1>
       <Container>
-        <BinaryForm />
-        <DecimalResult />
+        <BinaryForm inputNumber={inputNumber} onClick={onClick} onChange={onChange} />
+        <DecimalResult convertedNumber={convertedNumber} />
       </Container>
     </div>
   );
