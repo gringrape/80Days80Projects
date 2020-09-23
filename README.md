@@ -13,3 +13,5 @@ https://github.com/florinpop17/app-ideas
 | [Calculator](./Projects/1-Beginner/Calculator-App.md)                             | Calculator                                                 | |
 | [Christmas Lights](./Projects/1-Beginner/Christmas-Lights-App.md)                 | Simulate a string of Christmas lights                      | |
 | [Cause Effect App](./Projects/1-Beginner/Cause-Effect-App.md)                     | Click list item to display item details                    ||
+|Color Cycle |	Cycle a color value through incremental changes | |
+|Countdown Timer| 	Event Countdown timer | |
