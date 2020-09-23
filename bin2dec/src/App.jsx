@@ -21,7 +21,7 @@ export default function App() {
 
   const handleClickConvert = () => {
     setState({
-      inputNumber: '',
+      ...state,
       convertedNumber: Number.parseInt(inputNumber, 2).toString(),
     });
   };
