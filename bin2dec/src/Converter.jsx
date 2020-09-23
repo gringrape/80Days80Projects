@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import DecimalResult from './DecimalResult';
 import BinaryForm from './BinaryForm';
@@ -12,7 +13,7 @@ const Container = styled.div`
   border: 1px black solid;
 `;
 
-export default function BinaryToDecimalConverter({
+export default function Converter({
   onChange,
   onClick,
   inputNumber,
@@ -28,3 +29,10 @@ export default function BinaryToDecimalConverter({
     </div>
   );
 }
+
+Converter.propTypes = {
+  inputNumber: PropTypes.string.isRequired,
+  convertedNumber: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

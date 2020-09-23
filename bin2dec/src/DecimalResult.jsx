@@ -7,11 +7,11 @@ export default function DecimalResult({ convertedNumber }) {
   return (
     <div>
       <Title>Decimal Output</Title>
-      <Input type="text" value={convertedNumber} />
+      <Input type="text" value={convertedNumber} onChange={() => {}} />
     </div>
   );
 }
 
 DecimalResult.propTypes = {
-  convertedNumber: PropTypes.number.isRequired,
+  convertedNumber: PropTypes.string.isRequired,
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import BinaryToDecimalConverter from './BinaryToDecimalConverter';
+import Converter from './Converter';
 
 export default function App() {
   const [state, setState] = useState({
@@ -22,12 +22,12 @@ export default function App() {
   const handleClickConvert = () => {
     setState({
       inputNumber: '',
-      convertedNumber: Number.parseInt(inputNumber, 2),
+      convertedNumber: Number.parseInt(inputNumber, 2).toString(),
     });
   };
 
   return (
-    <BinaryToDecimalConverter
+    <Converter
       inputNumber={inputNumber}
       convertedNumber={convertedNumber}
       onClick={handleClickConvert}
