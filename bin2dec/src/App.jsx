@@ -10,8 +10,14 @@ export default function App() {
 
   const { inputNumber, convertedNumber } = state;
 
+  const INPUT_LIMIT = 8;
+
   const handleInputChange = (e) => {
     e.preventDefault();
+
+    if (e.target.value.length > INPUT_LIMIT) {
+      return;
+    }
 
     setState({
       ...state,
