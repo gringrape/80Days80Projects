@@ -15,13 +15,21 @@ export default function App() {
   const handleInputChange = (e) => {
     e.preventDefault();
 
-    if (e.target.value.length > INPUT_LIMIT) {
+    const userInput = e.target.value;
+    const lastDigit = userInput[userInput.length - 1];
+
+    if (userInput.length > INPUT_LIMIT) {
+      return;
+    }
+
+    if (lastDigit !== '0' && lastDigit !== '1') {
+      alert('only 0 or 1 should be entered');
       return;
     }
 
     setState({
       ...state,
-      inputNumber: e.target.value,
+      inputNumber: userInput,
     });
   };
 
