@@ -62,9 +62,9 @@ export default function CalculatorPad() {
         <Cell />
       </Number>
       <Additional>
-        <Cell>C</Cell>
         <Cell>&#xB1;</Cell>
-        <Cell>%</Cell>
+        <Cell>C</Cell>
+        <Cell>AC</Cell>
       </Additional>
       <Operator>
         <Cell>+</Cell>

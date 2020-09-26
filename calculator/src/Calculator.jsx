@@ -3,10 +3,10 @@ import React from 'react';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorPad from './CalculatorPad';
 
-export default function Calculator() {
+export default function Calculator({ currentNumber }) {
   return (
     <div>
-      <CalculatorDisplay />
+      <CalculatorDisplay currentNumber={currentNumber} />
       <CalculatorPad />
     </div>
   );

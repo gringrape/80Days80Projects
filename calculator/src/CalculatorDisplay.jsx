@@ -16,11 +16,11 @@ const Number = styled.div`
   font-size: 8rem;
 `;
 
-export default function CalculatorDisplay() {
+export default function CalculatorDisplay({ currentNumber }) {
   return (
     <DisplayBox>
       <Number>
-        100
+        { currentNumber }
       </Number>
     </DisplayBox>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -11,10 +12,10 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export default function CalculatorPage() {
+export default function CalculatorPage({ currentNumber }) {
   return (
     <Container>
-      <Calculator />
+      <Calculator currentNumber={currentNumber} />
     </Container>
   );
 }
