@@ -9,7 +9,7 @@ https://github.com/florinpop17/app-ideas
 | 이름                                                                              | Short Description                                          | Check      |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------- |
 | Bin2Dec                                   | Binary-to-Decimal number converter                         |  x  |
-| Border Radius Previewer       | Preview how CSS3 border-radius values affect an element    ||
+| Border Radius Previewer       | Preview how CSS3 border-radius values affect an element    |x|
 | Calculator                             | Calculator                                                 | |
 | Christmas Lights                 | Simulate a string of Christmas lights                      | |
 | Cause Effect App                     | Click list item to display item details                    ||
