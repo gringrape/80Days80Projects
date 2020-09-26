@@ -33,7 +33,7 @@ const Additional = styled.div`
   grid-template-columns: repeat(3, 10rem);
 `;
 
-const Cell = styled.div`
+const Button = styled.div`
   border: 1px solid black;
   width: 100%;
   height: 100%;
@@ -44,34 +44,29 @@ const Cell = styled.div`
   align-items: center;
 `;
 
-export default function CalculatorPad() {
+export default function CalculatorPad({ onNumberClick }) {
   return (
     <Container>
       <Number>
-        <Cell>1</Cell>
-        <Cell>2</Cell>
-        <Cell>3</Cell>
-        <Cell>4</Cell>
-        <Cell>5</Cell>
-        <Cell>6</Cell>
-        <Cell>7</Cell>
-        <Cell>8</Cell>
-        <Cell>9</Cell>
-        <Cell>0</Cell>
-        <Cell>.</Cell>
-        <Cell />
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
+          <Button onClick={() => onNumberClick(number)}>
+            {number}
+          </Button>
+        ))}
+        <Button>.</Button>
+        <Button />
       </Number>
       <Additional>
-        <Cell>&#xB1;</Cell>
-        <Cell>C</Cell>
-        <Cell>AC</Cell>
+        <Button>&#xB1;</Button>
+        <Button>C</Button>
+        <Button>AC</Button>
       </Additional>
       <Operator>
-        <Cell>+</Cell>
-        <Cell>-</Cell>
-        <Cell>*</Cell>
-        <Cell>/</Cell>
-        <Cell>=</Cell>
+        <Button>+</Button>
+        <Button>-</Button>
+        <Button>*</Button>
+        <Button>/</Button>
+        <Button>=</Button>
       </Operator>
     </Container>
   );

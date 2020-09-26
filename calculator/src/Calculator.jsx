@@ -3,11 +3,11 @@ import React from 'react';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorPad from './CalculatorPad';
 
-export default function Calculator({ currentNumber }) {
+export default function Calculator({ currentNumber, onNumberClick }) {
   return (
     <div>
       <CalculatorDisplay currentNumber={currentNumber} />
-      <CalculatorPad />
+      <CalculatorPad onNumberClick={onNumberClick} />
     </div>
   );
 }

@@ -12,10 +12,10 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export default function CalculatorPage({ currentNumber }) {
+export default function CalculatorPage({ currentNumber, onNumberClick }) {
   return (
     <Container>
-      <Calculator currentNumber={currentNumber} />
+      <Calculator currentNumber={currentNumber} onNumberClick={onNumberClick} />
     </Container>
   );
 }
