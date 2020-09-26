@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Operator = styled.div`
   grid-area: operator;
-  background-color: yellow;
+  background-color: green;
   display: grid;
   grid-template-rows: repeat(5, 10rem);
 `;
@@ -39,7 +39,9 @@ const Cell = styled.div`
   height: 100%;
   color: white;
   font-size: 5rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default function CalculatorPad() {
@@ -47,29 +49,29 @@ export default function CalculatorPad() {
     <Container>
       <Number>
         <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
-        <Cell>1</Cell>
+        <Cell>2</Cell>
+        <Cell>3</Cell>
+        <Cell>4</Cell>
+        <Cell>5</Cell>
+        <Cell>6</Cell>
+        <Cell>7</Cell>
+        <Cell>8</Cell>
+        <Cell>9</Cell>
+        <Cell>0</Cell>
+        <Cell>.</Cell>
+        <Cell />
       </Number>
       <Additional>
-        <Cell />
-        <Cell />
-        <Cell />
+        <Cell>C</Cell>
+        <Cell>&#xB1;</Cell>
+        <Cell>%</Cell>
       </Additional>
       <Operator>
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
+        <Cell>+</Cell>
+        <Cell>-</Cell>
+        <Cell>*</Cell>
+        <Cell>/</Cell>
+        <Cell>=</Cell>
       </Operator>
     </Container>
   );
