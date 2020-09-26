@@ -44,7 +44,7 @@ const Button = styled.div`
   align-items: center;
 `;
 
-export default function CalculatorPad({ onNumberClick }) {
+export default function CalculatorPad({ onNumberClick, onOperatorClicked }) {
   return (
     <Container>
       <Number>
@@ -62,11 +62,11 @@ export default function CalculatorPad({ onNumberClick }) {
         <Button>AC</Button>
       </Additional>
       <Operator>
-        <Button>+</Button>
-        <Button>-</Button>
-        <Button>*</Button>
-        <Button>/</Button>
-        <Button>=</Button>
+        {['+', '-', '*', '/', '='].map((operator) => (
+          <Button onClick={() => onOperatorClicked(operator)}>
+            {operator}
+          </Button>
+        ))}
       </Operator>
     </Container>
   );

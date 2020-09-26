@@ -12,10 +12,20 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export default function CalculatorPage({ currentNumber, onNumberClick }) {
+export default function CalculatorPage({ 
+  currentNumber,
+  accumulator,
+  onNumberClick,
+  onOperatorClicked,
+}) {
   return (
     <Container>
-      <Calculator currentNumber={currentNumber} onNumberClick={onNumberClick} />
+      <Calculator
+        currentNumber={currentNumber}
+        accumulator={accumulator}
+        onNumberClick={onNumberClick}
+        onOperatorClicked={onOperatorClicked}
+      />
     </Container>
   );
 }
