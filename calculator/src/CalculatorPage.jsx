@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CalculatorDisplay from './CalculatorDisplay';
+import Calculator from './Calculator';
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ const Container = styled.div`
 export default function CalculatorPage() {
   return (
     <Container>
-      <CalculatorDisplay />
+      <Calculator />
     </Container>
   );
 }
