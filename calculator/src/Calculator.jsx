@@ -8,11 +8,18 @@ export default function Calculator({
   accumulator,
   onNumberClick,
   onOperatorClicked,
+  onReset,
+  onCancel,
 }) {
   return (
     <div>
       <CalculatorDisplay currentNumber={currentNumber} accumulator={accumulator} />
-      <CalculatorPad onNumberClick={onNumberClick} onOperatorClicked={onOperatorClicked} />
+      <CalculatorPad
+        onNumberClick={onNumberClick}
+        onOperatorClicked={onOperatorClicked}
+        onReset={onReset}
+        onCancel={onCancel}
+      />
     </div>
   );
 }

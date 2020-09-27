@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './App.css';
 
 import CalculatorPage from './CalculatorPage';
@@ -19,7 +18,6 @@ function makeCalculators(operator) {
 export default function App() {
   const [state, setState] = useState({
     currentNumber: 0,
-    storedOperator: '=',
   });
 
   const { currentNumber, accumulator, storedOperator } = state;
@@ -30,12 +28,12 @@ export default function App() {
     }
     setState({
       ...state,
-      currentNumber: currentNumber * 10 + number,
+      currentNumber: (currentNumber ?? 0) * 10 + number,
     });
   };
 
   const handleOperatorClicked = (operator) => {
-    const calculate = makeCalculators(storedOperator);
+    const calculate = makeCalculators(storedOperator ?? '=');
 
     setState({
       currentNumber: null,
@@ -44,12 +42,35 @@ export default function App() {
     });
   };
 
+  const handleReset = () => {
+    setState({
+      currentNumber: 0,
+    });
+  };
+
+  const handleCancel = () => {
+    const newState = currentNumber
+      ? ({
+        ...state,
+        currentNumber: 0,
+      })
+      : ({
+        currentNumber: accumulator,
+        storedOperator: null,
+        accumulator: null,
+      });
+
+    setState(newState);
+  };
+
   return (
     <CalculatorPage
       currentNumber={currentNumber}
       accumulator={accumulator}
       onNumberClick={handleAddToCurrent}
       onOperatorClicked={handleOperatorClicked}
+      onReset={handleReset}
+      onCancel={handleCancel}
     />
   );
 }

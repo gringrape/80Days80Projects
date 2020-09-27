@@ -12,11 +12,13 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export default function CalculatorPage({ 
+export default function CalculatorPage({
   currentNumber,
   accumulator,
   onNumberClick,
   onOperatorClicked,
+  onReset,
+  onCancel,
 }) {
   return (
     <Container>
@@ -25,6 +27,8 @@ export default function CalculatorPage({
         accumulator={accumulator}
         onNumberClick={onNumberClick}
         onOperatorClicked={onOperatorClicked}
+        onReset={onReset}
+        onCancel={onCancel}
       />
     </Container>
   );

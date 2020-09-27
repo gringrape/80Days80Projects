@@ -16,7 +16,19 @@ const Number = styled.div`
   font-size: 8rem;
 `;
 
+const isOutOfBoundary = (number) => number > 10 ** 8 - 1;
+
 export default function CalculatorDisplay({ currentNumber, accumulator }) {
+  if (isOutOfBoundary(accumulator)) {
+    return (
+      <DisplayBox>
+        <Number>
+          Error
+        </Number>
+      </DisplayBox>
+    );
+  }
+
   return (
     <DisplayBox>
       <Number>
