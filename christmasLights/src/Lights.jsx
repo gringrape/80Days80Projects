@@ -11,11 +11,11 @@ const Container = styled.div`
   padding: 0 8rem;
 `;
 
-export default function Lights() {
+export default function Lights({ periodFunctions }) {
   return (
     <Container>
-      {colors.map((color) => (
-        <Light color={color} />
+      {colors.map((color, index) => (
+        <Light color={color} periodFunction={periodFunctions[index % periodFunctions.length]} />
       ))}
     </Container>
   );

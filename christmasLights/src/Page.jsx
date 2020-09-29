@@ -28,13 +28,13 @@ const ButtonBox = styled.div`
   margin-top: 3.5rem;
 `;
 
-export default function Page() {
+export default function Page({ periodFunctions }) {
   return (
     <Container>
       <Title>
         Merry Christmas :&#41;
       </Title>
-      <Lights />
+      <Lights periodFunctions={periodFunctions} />
       <ButtonBox>
         <Button />
       </ButtonBox>
