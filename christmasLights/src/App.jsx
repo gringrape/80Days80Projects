@@ -5,13 +5,6 @@ import Page from './Page';
 
 import './App.css';
 
-const Ball = styled.div`
-  width: 10rem;
-  height: 10rem;
-  background-color: hsl(${(props) => props.hue}, 100%, ${(props) => props.period * 25 + 50}%);
-  border-radius: 50%;
-`;
-
 export default function App() {
   const [number, setNumber] = useState(0);
 
