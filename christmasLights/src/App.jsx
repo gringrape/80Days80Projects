@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 
 import Page from './Page';
@@ -7,12 +6,25 @@ import './App.css';
 
 export default function App() {
   const [number, setNumber] = useState(0);
+  const [timerId, setTimerId] = useState(null);
 
-  useEffect(() => {
-    const updateNum = (num) => (num > 99 ? 0 : num + 1);
-    const intervalId = setInterval(() => setNumber(updateNum), 30);
-    return () => clearInterval(intervalId);
-  }, []);
+  const updateNumber = (num) => {
+    if (num > 99) {
+      return 0;
+    }
+    return num + 1;
+  };
+
+  // handle Click
+  const handleClick = () => {
+    if (timerId) {
+      clearInterval(timerId);
+      setTimerId(null);
+      setNumber(0);
+      return;
+    }
+    setTimerId(setInterval(() => setNumber(updateNumber), 20));
+  };
 
   const theta = (num) => (2 * Math.PI) * (num / 100);
 
@@ -20,6 +32,6 @@ export default function App() {
   const periodTwo = () => (1 - Math.cos(theta(number))) / 2;
 
   return (
-    <Page periodFunctions={[periodOne, periodTwo]} />
+    <Page periodFunctions={[periodOne, periodTwo]} onClick={handleClick} />
   );
 }

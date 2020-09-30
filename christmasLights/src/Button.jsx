@@ -6,9 +6,9 @@ const StyledButton = styled.button`
   letter-spacing: .2rem;
 `;
 
-export default function Button() {
+export default function Button({ onClick }) {
   return (
-    <StyledButton>
+    <StyledButton onClick={onClick}>
       On/Off
     </StyledButton>
   );

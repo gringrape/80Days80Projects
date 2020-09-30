@@ -28,7 +28,7 @@ const ButtonBox = styled.div`
   margin-top: 3.5rem;
 `;
 
-export default function Page({ periodFunctions }) {
+export default function Page({ periodFunctions, onClick }) {
   return (
     <Container>
       <Title>
@@ -36,7 +36,7 @@ export default function Page({ periodFunctions }) {
       </Title>
       <Lights periodFunctions={periodFunctions} />
       <ButtonBox>
-        <Button />
+        <Button onClick={onClick} />
       </ButtonBox>
     </Container>
   );
