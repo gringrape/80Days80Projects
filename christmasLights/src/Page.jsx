@@ -28,7 +28,7 @@ const ButtonBox = styled.div`
   margin-top: 3.5rem;
 `;
 
-export default function Page({ periodFunctions, onClick }) {
+export default function Page({ periodFunctions, onClick, onChange, cycle }) {
   return (
     <Container>
       <Title>
@@ -37,6 +37,7 @@ export default function Page({ periodFunctions, onClick }) {
       <Lights periodFunctions={periodFunctions} />
       <ButtonBox>
         <Button onClick={onClick} />
+        <input type="text" value={cycle} onChange={(e) => onChange(e.target.value)} />
       </ButtonBox>
     </Container>
   );
