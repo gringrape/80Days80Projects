@@ -1,4 +1,7 @@
 /* @jsx createElement */
+
+import people from './people';
+
 function createElement(tagName, props, ...children) {
   const element = document.createElement(tagName);
 
@@ -6,7 +9,7 @@ function createElement(tagName, props, ...children) {
     element[name.toLowerCase()] = value;
   });
 
-  children.forEach((child) => {
+  children.flat().forEach((child) => {
     if (child instanceof Node) {
       element.appendChild(child);
     } else {
@@ -18,19 +21,11 @@ function createElement(tagName, props, ...children) {
   return element;
 }
 
-function handleClick() {
-  console.log('Clicked!!');
-}
-
 const root = (
-  <div id="name" className="person">
-    <div>
-      <p>hello world</p>
-    </div>
-    <p>Hello world</p>
-    <button type="button" onClick={handleClick}>
-      click me
-    </button>
+  <div>
+    {people.map(({ name }) => (
+      <p>{name}</p>
+    ))}
   </div>
 );
 
