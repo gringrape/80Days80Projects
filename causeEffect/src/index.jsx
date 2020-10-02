@@ -46,18 +46,40 @@ const rightPanelStyle = `
   background-color: blue;
 `;
 
-const root = (
-  <div style={containerStyle}>
-    <div style={leftPanelStyle}>
-      {people.map(({ name }) => (
-        <p>{name}</p>
-      ))}
-    </div>
-    <div style={rightPanelStyle}>
-      right panel
-    </div>
-  </div>
-);
+function render({ personName = '김덕수' }) {
+  const personStatus = Object.entries(
+    people.find(({ name }) => name === personName),
+  );
 
-document.getElementById('app')
-  .appendChild(root);
+  const handleNameClick = (name) => {
+    render({ personName: name });
+  };
+
+  const root = (
+    <div style={containerStyle}>
+      <div style={leftPanelStyle}>
+        {people.map(({ name }) => (
+          <p>
+            <button onClick={() => handleNameClick(name)} type="button">
+              {name}
+            </button>
+          </p>
+        ))}
+      </div>
+      <div style={rightPanelStyle}>
+        {personStatus.map(([key, value]) => (
+          <p>
+            {key}
+            :
+            {value}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+
+  document.getElementById('app')
+    .appendChild(root);
+}
+
+render({});
