@@ -21,11 +21,41 @@ function createElement(tagName, props, ...children) {
   return element;
 }
 
+const containerStyle = `
+  background-color: yellow;
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%,-50%);
+  display: flex;
+`;
+
+const leftPanelStyle = `
+  width: 20%;
+  height: 100%;
+  background-color: red;  
+`;
+
+const rightPanelStyle = `
+  margin-left: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+`;
+
 const root = (
-  <div>
-    {people.map(({ name }) => (
-      <p>{name}</p>
-    ))}
+  <div style={containerStyle}>
+    <div style={leftPanelStyle}>
+      {people.map(({ name }) => (
+        <p>{name}</p>
+      ))}
+    </div>
+    <div style={rightPanelStyle}>
+      right panel
+    </div>
   </div>
 );
 
