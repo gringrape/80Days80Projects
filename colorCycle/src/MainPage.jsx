@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import ColorBox from './ColorBox';
 import HexBox from './HexBox';
+import Button from './Button';
+import IncrementInput from './IncrementInput';
 
 const Container = styled.div`
   width: 100%;
@@ -34,6 +36,12 @@ export default function MainPage() {
         <ColorBox />
         <HexBox />
       </BoxContainer>
+      <div>
+        <IncrementInput />
+        <Button>
+          Start
+        </Button>
+      </div>
     </Container>
   );
 }
