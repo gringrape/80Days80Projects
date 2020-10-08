@@ -9,12 +9,28 @@ const Container = styled.div`
   grid-column-gap: 1rem;
 `;
 
-export default function HexBox() {
+export default function HexBox({ colors, isRunning, onChange }) {
+  const { red, green, blue } = colors;
   return (
     <Container>
-      <HexInput color="Red" />
-      <HexInput color="Green" />
-      <HexInput color="Blue" />
+      <HexInput
+        color="Red"
+        hexValue={red}
+        onChange={onChange('red')}
+        isRunning={isRunning}
+      />
+      <HexInput
+        color="Green"
+        hexValue={green}
+        onChange={onChange('green')}
+        isRunning={isRunning}
+      />
+      <HexInput
+        color="Blue"
+        hexValue={blue}
+        onChange={onChange('blue')}
+        isRunning={isRunning}
+      />
     </Container>
   );
 }

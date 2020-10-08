@@ -28,19 +28,32 @@ const BoxContainer = styled.div`
   height: 40vh;
 `;
 
-export default function MainPage() {
+export default function MainPage({
+  colors,
+  increment,
+  isRunning,
+  onChangeColor,
+  onChangeIncrement,
+  onClickToggle,
+}) {
   return (
     <Container>
       <Title>Color Cycle</Title>
       <BoxContainer>
-        <ColorBox />
-        <HexBox />
+        <ColorBox colors={colors} />
+        <HexBox
+          colors={colors}
+          isRunning={isRunning}
+          onChange={onChangeColor}
+        />
       </BoxContainer>
       <div>
-        <IncrementInput />
-        <Button>
-          Start
-        </Button>
+        <IncrementInput
+          increment={increment}
+          onChange={onChangeIncrement}
+          isRunning={isRunning}
+        />
+        <Button onClick={onClickToggle} isRunning={isRunning} />
       </div>
     </Container>
   );
