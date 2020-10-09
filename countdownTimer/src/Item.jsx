@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdQueryBuilder } from 'react-icons/md';
  
-export default function Item() {
+export default function Item({ event }) {
   const Container = styled.div`
     display: flex;
     align-items: center;
@@ -13,6 +13,8 @@ export default function Item() {
     font-size: 1.2rem;
     padding: .4rem;
   `;
+
+  
 
   return (
     <Container>

@@ -18,5 +18,11 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/prop-types': 0,
+    'jsx-a11y/label-has-for': [2, {
+      required: {
+        some: ['nested', 'id'],
+      },
+    }],
   },
 };

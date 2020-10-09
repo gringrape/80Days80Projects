@@ -8,11 +8,10 @@ const Container = styled.div`
   grid-gap: 1rem;
 `;
 
-export default function List() {
+export default function List({ events }) {
   return (
     <Container>
-      <Item />
-      <Item />
+      {events.map((event) => <Item event={event} />)}
     </Container>
   );
 }

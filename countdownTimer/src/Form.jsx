@@ -60,7 +60,7 @@ export default function Form() {
         <label htmlFor="time">Time</label>
         <Input type="time" id="time" value="00:00" />
       </InputBox>
-      <Button>ADD</Button>
+      <Button>Start</Button>
     </Container>
   );
 }

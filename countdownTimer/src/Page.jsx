@@ -19,7 +19,7 @@ const FormBox = styled.div`
 const ListBox = styled.div`
 `;
 
-export default function Page() {
+export default function Page({ events }) {
   return (
     <Container>
       <Title>Countdown Event</Title>
@@ -27,7 +27,7 @@ export default function Page() {
         <Form />
       </FormBox>
       <ListBox>
-        <List />
+        <List events={events} />
       </ListBox>
     </Container>
   );
