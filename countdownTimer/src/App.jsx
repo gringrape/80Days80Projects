@@ -17,7 +17,7 @@ export default function App() {
       datetime: '2020-12-19T05:24:00',
     },
   ]);
-  const [newEvent, setNewEvent] = useState({
+  const [event, setEvent] = useState({
     name: '',
     date: '',
     time: '00:00',

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdQueryBuilder } from 'react-icons/md';
+
+import { getDays, getHours, getMinutes, getSeconds } from './utils';
  
 export default function Item({ event }) {
   const Container = styled.div`
@@ -14,12 +16,13 @@ export default function Item({ event }) {
     padding: .4rem;
   `;
 
-  
+  const now = new Date();
+  const eventTime = new Date(event.datetime);
 
   return (
     <Container>
       <MdQueryBuilder />
-      &nbsp; X Days 00:00:00 Left
+      &nbsp; {event.name} {getDays(eventTime, now)} Days {getHours(now, eventTime)}:{getMinutes(now, eventTime)}:{getSeconds(now, eventTime)} Left
       <Button>Complete</Button>
     </Container>
   );
