@@ -8,7 +8,7 @@ const Container = styled.div`
   grid-gap: 1rem;
 `;
 
-export default function List({ events }) {
+export default function List({ events, onQuit }) {
   return (
     <Container>
       {events.map((event) => <Item event={event} />)}

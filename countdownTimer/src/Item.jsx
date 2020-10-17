@@ -24,12 +24,13 @@ export default function Item({ event }) {
   useEffect(() => {
     const id = setInterval(
       () => forceUpdate(),
-      500,
+      50,
     );
+
     return () => {
       clearInterval(id);
     }
-  }, [event])
+  }, [event]);
 
   return (
     <Container>

@@ -45,22 +45,24 @@ const Button = styled.button`
   display: inline-block;
 `;
 
-export default function Form() {
+export default function Form({ event, getChangeHandler, onSubmit, onQuit }) {
+  const { name, date, time } = event;
+
   return (
-    <Container>
+    <Container onSubmit={onSubmit}>
       <InputBox>
         <label htmlFor="name">Name</label>
-        <Input id="name" />
+        <Input id="name" value={name} onChange={getChangeHandler('name')} required/>
       </InputBox>
       <InputBox>
         <label htmlFor="date">Date</label>
-        <Input type="date" id="date" />
+        <Input type="date" id="date" value={date} onChange={getChangeHandler('date')} required/>
       </InputBox>
       <InputBox>
         <label htmlFor="time">Time</label>
-        <Input type="time" id="time" value="00:00" />
+        <Input type="time" id="time" value={time} onChange={getChangeHandler('time')}/>
       </InputBox>
-      <Button>Start</Button>
+      <Button type="submit">Start</Button>
     </Container>
   );
 }
