@@ -19,12 +19,12 @@ const FormBox = styled.div`
 const ListBox = styled.div`
 `;
 
-export default function Page({ events }) {
+export default function Page({ events, event, getChangeHandler, handleSubmitAdd }) {
   return (
     <Container>
       <Title>Countdown Event</Title>
       <FormBox>
-        <Form />
+        <Form event={event} getChangeHandler={getChangeHandler} onSubmit={handleSubmitAdd} />
       </FormBox>
       <ListBox>
         <List events={events} />
